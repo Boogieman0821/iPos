@@ -1,33 +1,36 @@
-name: Build EXE
+name: Build EXE with PyInstaller
 
 on:
-  push:
-    branches: [ main ]  # Ejecuta cuando se hace push a la rama "main"
+  workflow_dispatch:  # Permite ejecutarlo manualmente
 
 jobs:
   build:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v3
+      # 1️⃣ Descargar el código del repo
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
+      # 2️⃣ Instalar Python (usa la versión que tengas en tu proyecto)
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        pip install pyinstaller
+      # 3️⃣ Instalar dependencias
+      - name: Install dependencies
+        run: |
+          pip install pandas openpyxl pyinstaller
 
-    - name: Build executable
-      run: |
-        pyinstaller --onefile main.py
+      # 4️⃣ Crear el ejecutable con PyInstaller
+      - name: Build EXE
+        run: |
+          pyinstaller --onefile main.py
 
-    - name: Upload artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: ejecutable
-        path: dist/*.exe
+      # 5️⃣ Subir el ejecutable como artefacto
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ExcelProcesadorEXE
+          path: dist/main.exe
