@@ -1,0 +1,36 @@
+name: Build EXE with PyInstaller
+
+on:
+  workflow_dispatch:  # Permite ejecutarlo manualmente
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      # 1️⃣ Descargar el código del repo
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2️⃣ Instalar Python (usa la versión que tengas en tu proyecto)
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # 3️⃣ Instalar dependencias
+      - name: Install dependencies
+        run: |
+          pip install pandas openpyxl pyinstaller
+
+      # 4️⃣ Crear el ejecutable con PyInstaller
+      - name: Build EXE
+        run: |
+          pyinstaller --onefile main.py
+
+      # 5️⃣ Subir el ejecutable como artefacto
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ExcelProcesadorEXE
+          path: dist/main.exe
