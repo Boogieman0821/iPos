@@ -3,8 +3,8 @@ import pandas as pd
 # ==============================
 # CONFIGURACIÓN
 # ==============================
-file_path = '\Users\jimgl\Downloads\VENTAS.xlsx'  # Ruta local a tu archivo original
-output_path = '\Users\jimgl\Downloads\Ventas_RUTA_Procesada.xlsx'  # Archivo generado
+file_path = '\\Users\\jimgl\\Downloads\\VENTAS.xlsx'  # Ruta local a tu archivo original
+output_path = '\\Users\jimgl\\Downloads\\Ventas_RUTA_Procesada.xlsx'  # Archivo generado
 
 # ==============================
 # 1. Cargar las hojas
