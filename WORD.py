@@ -10,8 +10,8 @@ import os
 # =========================
 # RUTAS DE ARCHIVOS
 # =========================
-ruta_excel = os.path.expanduser("C:\Users\jimgl\Downloads\RUTA_PROCESADA.xlsx")
-ruta_word = os.path.expanduser("C:\Users\jimgl\Downloads\RUTA_PROCESADA.docx")
+ruta_excel = os.path.expanduser("C:\\Users\\jimgl\Downloads\\RUTA_PROCESADA.xlsx")
+ruta_word = os.path.expanduser("C:\\Users\jimgl\\Downloads\\RUTA_PROCESADA.docx")
 
 # =========================
 # CARGAR EXCEL
