@@ -21,7 +21,7 @@ jobs:
       # Instalar dependencias
       - name: Install dependencies
         run: |
-          pip install pandas openpyxl pyinstaller
+          pip install pandas openpyxl python-docx pyinstaller
 
       # Compilar main.py
       - name: Build MAIN
@@ -38,7 +38,7 @@ jobs:
         run: |
           pyinstaller --onefile VENTAS.py
 
-      # Subir los ejecutables generados
+      # Subir ejecutables
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
