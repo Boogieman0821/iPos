@@ -4,7 +4,7 @@ import pandas as pd
 # CONFIGURACIÓN
 # ==============================
 file_path = r"C:\Users\jimgl\Downloads\VENTAS.xlsx"
-output_path = r"C:\Users\jimgl\Downloads\VENTAS_Procesadas.xlsx"
+output_path = r"C:\Users\jimgl\Downloads\Ventas_RUTA_Procesada.xlsx"
 
 # ==============================
 # 1. Cargar las hojas
