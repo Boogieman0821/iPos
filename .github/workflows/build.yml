@@ -1,4 +1,4 @@
-name: Build EXE with PyInstaller
+name: Build EXEs with PyInstaller
 
 on:
   workflow_dispatch:
